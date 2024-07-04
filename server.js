@@ -34,6 +34,7 @@ import showRoute from './routes/show.js';
 import path from "path";
 import { fileURLToPath } from 'url';
 import downloadRoute from "./routes/download.js";
+import cors from "cors";
 
 import dotenv from 'dotenv';
 
@@ -45,6 +46,12 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 
+
+const corsOptions={
+    origin: process.env.ALLOWED_CLIENTS.split(',');
+}
+
+app.use(cors(corsOptions));
 // Import the database connection function
 import connectToMongoDB from "./config/db.js";
 
