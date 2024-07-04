@@ -47,12 +47,12 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 
-const allowedClients = process.env.ALLOWED_CLIENTS.split(',');
+// const allowedClients = process.env.ALLOWED_CLIENTS.split(',');
 
-app.use(cors({
-  origin: allowedClients,
-  // other options if needed
-}));
+// app.use(cors({
+//   origin: allowedClients,
+//   // other options if needed
+// }));
 
 // Import the database connection function
 import connectToMongoDB from "./config/db.js";
